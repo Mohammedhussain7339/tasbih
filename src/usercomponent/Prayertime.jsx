@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import BASE_URL  from '../services/url';
+import Nav from './Nav';
 function Prayertime() {
   const [fetchtime, setfetchTime] = useState([]);
 
@@ -21,15 +22,9 @@ function Prayertime() {
   return (
     <div>
       {/* Navigation Bar */}
-      <nav className="bg-darkblue py-3 px-3 text-white text-xl sm:text-2xl md:text-3xl flex justify-between items-center">
-        <h1 className="font-bold">Tasbih</h1>
-        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-100">
-          {/* Example Profile Icon */}
-        </div>
-      </nav>
-
+      <Nav/>
       {/* Prayer Times Section */}
-      <div className="py-10 px-4">
+      <div className="py-10 px-4 bg-gradient-to-t from-100 to-500 text-white">
         <h2 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-8">Prayer Times</h2>
         <div className="w-full h-[80vh] flex flex-col items-center justify-center ">
           {fetchtime.length > 0 ? (
@@ -37,13 +32,13 @@ function Prayertime() {
               {fetchtime.map((ptime, index) => (
                 <div
   key={index}
-  className="flex justify-between w-full xsm:w-[300px] bg-red-300 p-4 rounded-lg shadow-md border border-gray-200 my-2"
+  className="flex justify-between w-full xsm:w-[300px]  p-4 rounded-lg shadow-md border border-gray-200 my-2"
 >
   {/* Namaz Name on the Left */}
   <p className="font-semibold lg:text-2xl ">{ptime.namazName}</p>
 
   {/* Namaz Time on the Right */}
-  <p className="text-gray-600 lg:text-2xl">{ptime.namaztime}</p>
+  <p className="text-white lg:text-2xl">{ptime.namaztime}</p>
 </div>
               ))}
             </div>

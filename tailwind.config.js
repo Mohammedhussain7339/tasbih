@@ -11,7 +11,8 @@ export default {
         100: '#15A3EF',
         200: '#32729C',
         300:'#59a1db',
-        400:'#045692'
+        400:'#045692',
+        500:'#08527A'
       },
       backgroundImage: {
         'footer-texture': "url('/images/footer-texture.png')",
@@ -23,6 +24,9 @@ export default {
       },
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'],
+        noto: ['Markazi Text','sans-serif'],
+        amiri: ['Amiri','sans-serif'],
+
       },
 
     },

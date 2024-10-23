@@ -1,0 +1,7 @@
+/* styles.css */
+.gradient-text {
+    background: linear-gradient(to right, green, #feb47b); /* Define your gradient colors */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text transparent */
+  }
+  

@@ -17,7 +17,7 @@ function Surehmulk() {
         <div className='bg-200'>
             <Nav />
             <div className='mt-4 h-[85vh] overflow-y-scroll scrollbar-hide'>
-                <h1 className='text-center text-white text-2xl underline'>Sureh Mulk</h1>
+                <h1 className='text-center text-white text-2xl underline'>سورةالملك</h1>
 
                 {/* Image Container */}
                 <div className='w-full flex flex-col items-center'>

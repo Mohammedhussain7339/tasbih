@@ -41,6 +41,7 @@ function Navbar() {
         <li className='py-2 md:py-0 text-white'><Link to='/'>Home</Link></li>
         <li className='py-2 md:py-0 text-white'><Link to='/prayertime'>Prayer Time</Link></li>
         <li className='py-2 md:py-0 text-white'><Link to='/quran'>Quran</Link></li>
+       {isOpen?<li className='py-2 md:py-0 text-red-700 cursor-pointer' onClick={toggleMenu}> <b>Close</b></li> :null} 
       </ul>
     </div>
   );
