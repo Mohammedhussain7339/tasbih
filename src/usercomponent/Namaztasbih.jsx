@@ -37,15 +37,6 @@ function NamazTasbih() {
     <div className='w-full text-center py-40 cursor-pointer'onClick={clickHandler}>
       {/* Tasbih click handler */}
       <div  className=''>
-      <input 
-        type="range" 
-        min="0" 
-        max="100" 
-        value={value} 
-        onChange={handleInputChange} 
-      />
-      <br />
-
       {/* First range (0 to 33) */}
       <input 
         type="range" 
@@ -73,7 +64,17 @@ function NamazTasbih() {
         max="34" 
         value={value > 66 ? value - 66 : 0} 
         readOnly 
+      />      <br />
+
+            <input 
+        type="range" 
+        min="0" 
+        max="100" 
+        value={value} 
+        onChange={handleInputChange} 
       />
+
+
       </div>
       
       {/* Display current value */}

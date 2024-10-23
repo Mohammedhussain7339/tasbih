@@ -82,7 +82,7 @@ function Quotes() {
   };
   
   return (
-    <div className="w-full h-screen flex justify-center items-center flex-col bg-gray-100 p-4">
+    <div className="w-full flex justify-center items-center flex-col  p-4">
       <h1 className="text-2xl font-semibold mb-6">Add Quote</h1>
       <form className="flex flex-col w-full max-w-md border rounded-lg p-6 bg-white shadow-md" onSubmit={submitHandler}>
         <input

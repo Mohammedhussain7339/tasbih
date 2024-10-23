@@ -96,7 +96,7 @@ const handleEdit = (quote) => {
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === 'image') {
-        setQuoteData({ ...quoteData, image: files[0] }); // Set the uploaded image
+        setQuoteData({ ...quoteData, image: files[0] }); 
     } else {
         setQuoteData({ ...quoteData, [name]: value });
     }
@@ -110,8 +110,8 @@ if (error) return <div>{error}</div>;
     // Function to open the edit form with selected Dua's data
 
 return (
-    <div className="w-full h-screen flex justify-center items-center flex-col p-4">
-    <h1 className="text-xl mb-4">Namaz time List</h1>
+    <div className="w-full flex justify-center items-center flex-col p-4">
+    <h1 className="text-xl mb-4">Quotes</h1>
 
     {/* Update Form */}
     <div className="overflow-x-auto w-[90%]"> {/* Add horizontal scroll for mobile responsiveness */}
@@ -211,6 +211,8 @@ return (
                     required
                     className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
+            <input type="file" name="image" accept="image/*" onChange={handleChange} className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
                 <input
                     type="text"
                     name="fontStyle"

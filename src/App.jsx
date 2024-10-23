@@ -4,6 +4,7 @@ import Home from './usercomponent/Home'
 import Navbar from './usercomponent/Navbar'
 import Duapage from './usercomponent/Duapage'
 import Quran from './usercomponent/Quran'
+import Nav from './usercomponent/Nav';
 import Prayertime from './usercomponent/Prayertime'
 import AddDua from './Admincomponent/AddDua'
 import {
@@ -15,6 +16,15 @@ import Namaztime from './Admincomponent/Namaztime';
 import ShownTime from './Admincomponent/ShownTime';
 import Quotes from './Admincomponent/Quotes';
 import ShowQuotes from './Admincomponent/ShowQuotes';
+import Authpage from './Admincomponent/Authpage';
+import Surehmulk from './usercomponent/Qcomponent/Surehmulk';
+import Surehyaseen from './usercomponent/Qcomponent/Surehyaseen';
+import Surehjuma from './usercomponent/Qcomponent/Surehjuma';
+import Kul from './usercomponent/Qcomponent/Kul';
+import Adminhome from './Admincomponent/Adminhome';
+import Signup from './Admincomponent/Signup';
+import Login from './Admincomponent/Login';
+import Profile from './usercomponent/Qcomponent/Profile';
 
 function App() {
   const router = createBrowserRouter([
@@ -24,7 +34,7 @@ function App() {
     },
     {
       path: "quran",
-      element: <><Quran/><Navbar/></>
+      element: <><Nav/><Quran/><Navbar/></>
     },
     {
       path: "prayertime",
@@ -35,29 +45,42 @@ function App() {
       element:<><Duapage/><Navbar/></>
     },
     {
-      path:"addDua",
-      element:<><AddDua/></>
+      path:"Adminhome",
+      element:<><Adminhome/></>
+    },
+    
+    {
+      path:"Authpage",
+      element:<><Authpage/></>
     },
     {
-      path:"showDua",
-      element:<><ShowDua/></>
+      path:"Surehmulk",
+      element:<><Surehmulk/><Navbar/></>
     },
     {
-      path:"addNamaz",
-      element:<><Namaztime/></>
+      path:"surehyaseen",
+      element:<><Surehyaseen/><Navbar/></>
     },
     {
-      path:"showntime",
-      element:<><ShownTime/></>
+      path:'surehjuma',
+      element:<><Surehjuma/><Navbar/></>
     },
     {
-      path:"Quotes",
-      element:<><Quotes/></>
+      path:"kul",
+      element:<><Kul/><Navbar/></>
     },
     {
-      path:"ShowQuotes",
-      element:<><ShowQuotes/></>
+      path:'signup',
+      element:<><Signup/></>
     },
+    {
+      path:'login',
+      element:<><Login/></>
+    },
+    {
+      path:'profile',
+      element:<><Profile/></>
+    }
     
     ]);
   

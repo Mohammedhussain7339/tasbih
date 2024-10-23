@@ -74,7 +74,7 @@ function ShowDua() {
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center flex-col p-4">
+    <div className="w-full flex justify-center items-center flex-col p-4">
       <h1 className="text-xl mb-4">Dua List</h1>
 
       {/* Update Form */}
@@ -87,7 +87,7 @@ function ShowDua() {
             onChange={(e) => setFormData({ ...formData, duaTitle: e.target.value })}
             placeholder="Title"
             required
-            className="border p-2 mb-2 w-full"
+            className="border text-black p-2 mb-2 w-full"
           />
           <input
             type="text"
@@ -95,7 +95,7 @@ function ShowDua() {
             onChange={(e) => setFormData({ ...formData, duaDes: e.target.value })}
             placeholder="Description"
             required
-            className="border p-2 mb-2 w-full"
+            className="border text-black p-2 mb-2 w-full"
           />
           <input
             type="text"
@@ -103,7 +103,7 @@ function ShowDua() {
             onChange={(e) => setFormData({ ...formData, dua: e.target.value })}
             placeholder="Dua"
             required
-            className="border p-2 mb-2 w-full"
+            className="border text-black p-2 mb-2 w-full"
           />
           <input
             type="text"
@@ -111,7 +111,7 @@ function ShowDua() {
             onChange={(e) => setFormData({ ...formData, tarjuma: e.target.value })}
             placeholder="Tarjuma"
             required
-            className="border p-2 mb-2 w-full"
+            className="border text-black p-2 mb-2 w-full"
           />
           <button type="submit" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300">
             Update Dua
@@ -126,11 +126,11 @@ function ShowDua() {
         </form>
       )}
 
-      <div className="overflow-x-auto w-[90%]"> {/* Add horizontal scroll for mobile responsiveness */}
+<div className="w-[90%] overflow-x-auto sm:overflow-x-hidden">
         <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
-            <tr className="bg-gray-200 text-left">
-              <th className="border border-gray-300 p-2">Title</th>
+            <tr className="bg-gray-200 text-left ">
+              <th className="border border-gray-300 p-2 ">Title</th>
               <th className="border border-gray-300 p-2">Description</th>
               <th className="border border-gray-300 p-2">Dua</th>
               <th className="border border-gray-300 p-2">Tarjuma</th>
@@ -142,7 +142,7 @@ function ShowDua() {
             {duas.length > 0 ? (
               duas.map((dua) => (
                 <tr key={dua._id} className="border-t">
-                  <td className="border border-gray-300 p-2">{dua.duaTitle}</td>
+                  <td className="border border-gray-300 p-2 ">{dua.duaTitle}</td>
                   <td className="border border-gray-300 p-2">{dua.duaDes}</td>
                   <td className="border border-gray-300 p-2">{dua.dua}</td>
                   <td className="border border-gray-300 p-2">{dua.tarjuma}</td>

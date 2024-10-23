@@ -72,7 +72,7 @@ const handleUpdate = async (e) => {
 };
     
     return (
-        <div className="w-full h-screen flex justify-center items-center flex-col p-4">
+        <div className="w-full  flex justify-center items-center flex-col p-4">
         <h1 className="text-xl mb-4">Namaz time List</h1>
 
         {/* Update Form */}
