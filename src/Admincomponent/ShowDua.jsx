@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import  BASE_URL  from '../services/url';
 
 function ShowDua() {
   const [duas, setDuas] = useState([]); // State to hold fetched Dua data
@@ -18,7 +19,7 @@ function ShowDua() {
   // Function to fetch Duas from the backend
   const fetchDuas = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/duas'); // Ensure this URL matches your backend route
+      const response = await axios.get(`${BASE_URL}/api/duas`); // Ensure this URL matches your backend route
       setDuas(response.data);
       console.log('Fetched Duas:', response.data);
     } catch (error) {
@@ -38,7 +39,7 @@ function ShowDua() {
     if (!confirmDelete) return; // Exit if not confirmed
 
     try {
-      await axios.delete(`http://localhost:8000/api/updateduas/${id}`); // Use the complete URL
+      await axios.delete(`${BASE_URL}/api/updateduas/${id}`); // Use the complete URL
       toast.success('Dua deleted successfully'); // Show success notification
       fetchDuas(); // Refresh the Dua list after deletion
     } catch (error) {
@@ -63,7 +64,7 @@ function ShowDua() {
     e.preventDefault(); // Prevent the default form submission
 
     try {
-      await axios.put(`http://localhost:8000/api/updateduas/${selectedDua._id}`, formData); // Update the Dua
+      await axios.put(`${BASE_URL}/api/updateduas/${selectedDua._id}`, formData); // Update the Dua
       toast.success('Dua updated successfully'); // Show success notification
       setSelectedDua(null); // Clear the selected Dua
       fetchDuas(); // Refresh the Dua list after updating

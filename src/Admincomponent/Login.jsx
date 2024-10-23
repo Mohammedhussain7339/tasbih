@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import  BASE_URL  from '../services/url';
 function Login() {
     const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({
@@ -35,7 +36,7 @@ function Login() {
     };
 
     try {
-      const response = await axios.post('http://localhost:8000/api/login', data, {
+      const response = await axios.post(`${BASE_URL}/api/login`, data, {
         headers: {
           'Content-Type': 'application/json',
         },

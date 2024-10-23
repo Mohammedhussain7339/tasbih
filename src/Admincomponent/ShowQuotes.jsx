@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import  BASE_URL  from '../services/url';
 function ShowQuotes() {
     const [quotes, setquotes] = useState([]); // State to hold fetched Dua data
     const [refresh, setRefresh]=useState()
@@ -27,7 +27,7 @@ function ShowQuotes() {
     const fetchQuotes = async () => {
         setLoading(true); // Set loading to true while fetching
         try {
-            const response = await axios.get('http://localhost:8000/api/quotes');
+            const response = await axios.get(`${BASE_URL}/api/quotes`);
             setquotes(response.data);
             console.log('Fetched quotes:', response.data);
         } catch (error) {
@@ -51,7 +51,7 @@ const handleDelete = async (id) => {
     if (!confirmDelete) return; // Exit if not confirmed
 
     try {
-        await axios.delete(`http://localhost:8000/api/updatequotes/${id}`);
+        await axios.delete(`${BASE_URL}/api/updatequotes/${id}`);
         toast.success('Time deleted successfully'); // Show success notification
         
         // Update the quotes state by filtering out the deleted quote
@@ -80,7 +80,7 @@ const handleEdit = (quote) => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:8000/api/updatequotes/${editQuote}`, quoteData);
+      const response = await axios.put(`${BASE_URL}/api/updatequotes/${editQuote}`, quoteData);
       const updatedQuote = response.data.quote;
       setquotes(quotes.map((quote) => (quote._id === updatedQuote._id ? updatedQuote : quote))); // Update the quote in state
       setEditQuote(null); // Reset edit state

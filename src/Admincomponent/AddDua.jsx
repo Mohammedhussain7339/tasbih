@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import  BASE_URL  from '../services/url';
 function AddData() {
   const [duaInfo, setDuaInfo] = useState({
     duaTitle: '',
@@ -33,9 +33,8 @@ function AddData() {
     formData.append('duaDescription', duaInfo.duaDescription);
     formData.append('dua', duaInfo.dua);
     formData.append('tarjuma', duaInfo.tarjuma); // Correct field name here
-
     try {
-      const response = await axios.post('http://localhost:8000/api/duas', formData, {
+      const response = await axios.post(`${BASE_URL}/api/duas`, formData, {
         headers: {
           'Content-Type': 'application/json',
         },

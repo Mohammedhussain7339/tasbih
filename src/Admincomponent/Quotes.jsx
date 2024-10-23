@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import  BASE_URL  from '../services/url';
 function Quotes() {
   const [quotesInfo, setQuotesInfo] = useState({
     whosaid: '',
@@ -61,7 +61,7 @@ function Quotes() {
     formData.append('textPosition', textPosition); // Append text position
   
     try {
-      const response = await axios.post('http://localhost:8000/api/quotes', formData, {
+      const response = await axios.post(`${BASE_URL}/api/quotes`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

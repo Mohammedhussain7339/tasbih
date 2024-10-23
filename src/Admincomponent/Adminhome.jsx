@@ -6,7 +6,6 @@ import Quotes from './Quotes';
 import ShownTime from './ShownTime';
 import ShowQuotes from './ShowQuotes';
 import { useNavigate } from 'react-router-dom';
-
 function Adminhome() {
   const navigate = useNavigate(); // Initialize the navigate function
   const [activeComponent, setActiveComponent] = useState('');

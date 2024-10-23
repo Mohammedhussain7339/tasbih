@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
+import BASE_URL  from '../services/url';
 function Prayertime() {
   const [fetchtime, setfetchTime] = useState([]);
 
   const fetchtimes = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/namaztime'); // Ensure this URL matches your backend route
+      const response = await axios.get(`${BASE_URL}/api/namaztime`); // Ensure this URL matches your backend route
       setfetchTime(response.data);
       console.log('Fetched prayertime:', response.data);
     } catch (error) {

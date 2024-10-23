@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import  BASE_URL  from '../services/url';
 function Namaztime() {
     const [namazTime, setnamazTime] = useState({
         namazName: '',
@@ -28,7 +28,7 @@ function Namaztime() {
           formData.append('namaztime', namazTime.namaztime);
       
           try {
-            const response = await axios.post('http://localhost:8000/api/namaztime', formData, {
+            const response = await axios.post(`${BASE_URL}/api/namaztime`, formData, {
               headers: {
                 'Content-Type': 'application/json',
               },

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import  BASE_URL  from '../services/url';
 function Signup() {
   const [userInfo, setUserInfo] = useState({
     username: '',
@@ -29,7 +30,7 @@ function Signup() {
 
     try {
       // Send JSON data instead of FormData
-      const response = await axios.post('http://localhost:8000/api/signup', userInfo, {
+      const response = await axios.post(`${BASE_URL}/api/signup`, userInfo, {
         headers: {
           'Content-Type': 'application/json',
         },
