@@ -82,7 +82,7 @@ function Quotes() {
   };
   
   return (
-    <div className="w-full flex justify-center items-center flex-col  p-4">
+    <div className="w-full text-black flex justify-center items-center flex-col  p-4">
       <h1 className="text-2xl font-semibold mb-6">Add Quote</h1>
       <form className="flex flex-col w-full max-w-md border rounded-lg p-6 bg-white shadow-md" onSubmit={submitHandler}>
         <input
@@ -91,7 +91,7 @@ function Quotes() {
           name="whosaid"
           onChange={changeHandler}
           value={quotesInfo.whosaid}
-          className="mb-4 p-2 border rounded"
+          className="mb-4 p-2 border rounded text-black"
         />
         <input
           type="text"
@@ -99,7 +99,7 @@ function Quotes() {
           name="whatsaid"
           onChange={changeHandler}
           value={quotesInfo.whatsaid}
-          className="mb-4 p-2 border rounded"
+          className="mb-4 p-2 border rounded text-black"
         />
         <input
           type="file"

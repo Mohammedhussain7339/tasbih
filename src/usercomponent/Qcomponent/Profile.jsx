@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const VibrationButton = () => {
-    const handleClick = () => {
-        // Check if vibration is supported
-        if (navigator.vibrate) {
-            navigator.vibrate(200); // Vibrate for 200 milliseconds
-        } else {
-            console.log("Vibration is not supported on this device.");
-        }
-    };
+function Profile() {
+  const [text, setText] = useState('');
+  const [displayText, setDisplayText] = useState([]); // State to hold the displayed text as an array
 
-    return (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <h1>Vibration Test</h1>
-            <button onClick={handleClick} style={{ padding: '10px 20px', fontSize: '16px' }}>
-                Click to Vibrate
-            </button>
-        </div>
-    );
-};
+  const submitHandler = () => {
+    if (text.trim() !== '') { // Prevent adding empty strings
+      // Append the current text to the displayed text array
+      setDisplayText((prev) => [...prev, text]); // Use spread operator to create a new array
+      setText(''); // Clear the input field after submission
+    }
+  };
 
-export default VibrationButton;
+  const changeHandler = (e) => {
+    setText(e.target.value);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        name="text"
+        onChange={changeHandler}
+        value={text}
+        placeholder="Enter your todo"
+      />
+      <ul>
+        {displayText.map((val, index) => (
+          <li className='' key={index}>{val}</li> // Render each item as a list element
+        ))}
+      </ul>
+      <button onClick={submitHandler}>Submit</button>
+    </div>
+  );
+}
+
+export default Profile;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false); // State to toggle the menu
-
+  const username=localStorage.getItem('username');
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
@@ -36,12 +36,14 @@ function Navbar() {
       </div>
 
       {/* Navigation Links */}
-      <ul className={`flex-col md:flex md:flex-row ${isOpen ? 'flex' : 'hidden'} md:visible absolute md:static bg-200 md:bg-transparent w-full md:w-auto top-16 md:top-auto left-0 md:left-auto md:space-x-6 p-4 md:p-0`}>
+      <ul className={`flex-col md:flex  md:flex-row ${isOpen ? 'flex' : 'hidden'} md:visible absolute md:static bg-200 md:bg-transparent w-full md:w-auto top-16 md:top-auto left-0 md:left-auto md:space-x-6 p-4 md:p-0`}>
         <li className='py-2 md:py-0 text-white'><Link to='/duapage'>Dua</Link></li>
         <li className='py-2 md:py-0 text-white'><Link to='/'>Home</Link></li>
         <li className='py-2 md:py-0 text-white'><Link to='/prayertime'>Prayer Time</Link></li>
         <li className='py-2 md:py-0 text-white'><Link to='/quran'>Quran</Link></li>
-       {isOpen?<li className='py-2 md:py-0 text-red-700 cursor-pointer' onClick={toggleMenu}> <b>Close</b></li> :null} 
+        <li className='py-2 md:py-0 text-white'><Link to='/quotess'>Quotes</Link></li>
+{        username==="Mohammed_7339"?<li className='py-2 md:py-0 text-white'><Link to='/profile'>Profile</Link></li>
+:null}       {isOpen?<li className='py-2 md:py-0 text-red-700 cursor-pointer' onClick={toggleMenu}> <b>Close</b></li> :null} 
       </ul>
     </div>
   );

@@ -110,7 +110,7 @@ if (error) return <div>{error}</div>;
     // Function to open the edit form with selected Dua's data
 
 return (
-    <div className="w-full flex justify-center items-center flex-col p-4">
+    <div className="w-full flex justify-center items-center flex-col p-4 text-black">
     <h1 className="text-xl mb-4">Quotes</h1>
 
     {/* Update Form */}

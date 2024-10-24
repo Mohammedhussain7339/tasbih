@@ -6,6 +6,8 @@ import Quotes from './Quotes';
 import ShownTime from './ShownTime';
 import ShowQuotes from './ShowQuotes';
 import { useNavigate } from 'react-router-dom';
+import Nav from '../usercomponent/Nav';
+import Navbar from '../usercomponent/Navbar';
 function Adminhome() {
   const navigate = useNavigate(); // Initialize the navigate function
   const [activeComponent, setActiveComponent] = useState('');
@@ -22,6 +24,8 @@ function Adminhome() {
 
 
   return (
+    <>
+    <Nav/>
     <div className="w-full min-h-screen bg-gray-800 text-white flex flex-col items-center p-4">
       <h1 className="text-3xl font-bold mb-8 text-center">Admin Page</h1>
 
@@ -99,6 +103,8 @@ function Adminhome() {
         )}
       </div>
     </div>
+      <Navbar/>
+      </>
   );
 }
 

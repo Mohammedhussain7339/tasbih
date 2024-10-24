@@ -38,7 +38,7 @@ function Nav() {
             </nav>
 
             {isOpen && (
-                <div className='w-[300px] h-[300px] text-black rounded-lg bg-white absolute right-0 top-0 p-4'>
+                <div className='w-[300px] z-10 h-[300px] text-black rounded-lg bg-white absolute right-0 top-0 p-4'>
                     <div className='flex flex-col text-center w-full h-full items-center justify-center relative'>
                         <h1 
                             className='text-red-500 absolute right-1 top-1 cursor-pointer'

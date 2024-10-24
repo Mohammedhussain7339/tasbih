@@ -25,7 +25,7 @@ import Adminhome from './Admincomponent/Adminhome';
 import Signup from './Admincomponent/Signup';
 import Login from './Admincomponent/Login';
 import Profile from './usercomponent/Qcomponent/Profile';
-
+import Quotess from './usercomponent/Quotess';
 function App() {
   const router = createBrowserRouter([
     {
@@ -80,6 +80,10 @@ function App() {
     {
       path:'profile',
       element:<><Profile/></>
+    },
+    {
+      path:'quotess',
+      element:<><Quotess/></>
     }
     
     ]);
