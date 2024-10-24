@@ -171,3 +171,82 @@ function Profile() {
 }
 
 export default Profile;
+
+
+import React from 'react';
+import Tesseract from 'tesseract.js';
+
+const VibrationButton = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [image, setImage] = React.useState('');
+  const [text, setText] = React.useState('');
+  const [progress, setProgress] = React.useState(0);
+
+  const handleSubmit = () => {
+    setIsLoading(true);
+    Tesseract.recognize(image, 'eng','ara', {
+      logger: (m) => {
+        console.log(m);
+        if (m.status === 'recognizing text') {
+          setProgress(parseInt(m.progress * 100));
+        }
+      },
+    })
+      .catch((err) => {
+        console.error(err);
+      })
+      .then((result) => {
+        console.log(result.data);
+        setText(result.data.text);
+        setIsLoading(false);
+      });
+  };
+
+  return (
+    <div className="container h-screen flex items-center justify-center">
+      <div className="w-full max-w-md flex flex-col justify-center">
+        {!isLoading && <h1 className="text-center text-3xl font-bold py-5">Image To Text</h1>}
+        {isLoading && (
+          <>
+            <progress className="w-full h-2 mb-4" value={progress} max="100">
+              {progress}%
+            </progress>
+            <p className="text-center mb-0">Converting: {progress} %</p>
+          </>
+        )}
+        {!isLoading && !text && (
+          <>
+            <input
+              type="file"
+              onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}
+              className="w-full p-2 border border-gray-300 rounded-md mb-4"
+            />
+            <button
+              onClick={handleSubmit}
+              className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition mt-4"
+            >
+              Convert
+            </button>
+          </>
+        )}
+        {!isLoading && text && (
+          <>
+            <textarea
+              className="w-full p-4 border border-gray-300 rounded-md mt-4"
+              rows="10"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            ></textarea>
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default VibrationButton;
+import React from 'react'
+
+function Profile() {
+  return (
+    <div>
