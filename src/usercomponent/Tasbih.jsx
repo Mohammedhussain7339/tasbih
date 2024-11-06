@@ -30,7 +30,7 @@ function Tasbih() {
       <div className="refresh text-red-600 mx-5 text-2xl cursor-pointer" onClick={clearHandler}>
         clear
       </div>
-      <main className="flex items-center justify-center min-h-[74vh] cursor-pointer" onClick={clickHandler}>
+      <main className="flex items-center justify-center min-h-[67vh] cursor-pointer" onClick={clickHandler}>
         <div className="text-center text-8xl text-white underline ">{value}</div>
       </main>
     </div>

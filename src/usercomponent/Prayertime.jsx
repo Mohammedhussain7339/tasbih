@@ -24,7 +24,7 @@ function Prayertime() {
       {/* Navigation Bar */}
       <Nav/>
       {/* Prayer Times Section */}
-      <div className="py-10 px-4 bg-gradient-to-t from-100 to-500 text-white">
+      <div className="py-10  px-4 bg-gradient-to-t from-100 to-500 text-white">
         <h2 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-8">Prayer Times</h2>
         <div className="w-full h-[80vh] flex flex-col items-center justify-center ">
           {fetchtime.length > 0 ? (

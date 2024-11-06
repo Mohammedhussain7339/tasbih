@@ -22,7 +22,7 @@ function Home() {
             <Nav/>
             <div className='w-full flex justify-evenly mt-4'>
                 <div 
-                    className='px-5 py-2 rounded my-2 text-white cursor-pointer text-xl w-[180px] text-center bg-200 active:bg-100'
+                    className='px-5 py-2 flex justify-center items-center rounded my-2 text-white cursor-pointer text-xl w-[180px] text-center bg-200 active:bg-100'
                     onClick={tasbihHandler}
                 >
                     Tasbih

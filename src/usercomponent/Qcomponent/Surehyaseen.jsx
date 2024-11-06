@@ -25,7 +25,7 @@ function Surehyaseen() {
   return (
     <div>
       <Nav />
-      <h1 className='text-center text-white font-bold underline lg:text-4xl xsm:text-2xl bg-200'>Yasin</h1>
+      <h1 className='text-center  text-white underline lg:text-4xl xsm:text-2xl bg-200 py-1'>ياسين      </h1>
       <div className='overflow-y-scroll scrollbar-hide w-full h-[90vh] flex justify-center bg-200'>
         <div className='flex xl:w-[60%] xsm:w-[100%] flex-wrap relative z-0'>
           {/* Map through images array */}
